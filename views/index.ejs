@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meteo | Your Weather App</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <span>Meteo</span>
+      </div>
+      <form action="/search" method="post">
+        <input type="text" name="cityName" id="" placeholder="Type a city..." />
+        <input type="submit" value="Search" />
+      </form>
+    </header>
+    <main>
+      <% if (locals.city) {%>
+      <div class="container">
+        <div class="day-info">
+          <h1 class="city"><%= city %></h1>
+          <span class="time-info">
+            <span class="time"> <%= time %> | </span>
+            <span><%= dayOfWeek %></span>
+          </span>
+          <div class="weather">
+            <span class="humidity">Humidity:
+              <%= humidity %>%
+            </span>
+            <span class="temperature"> <%= temperature %> °C </span>
+            <span class="max-min">Lorem ipsum dolor sit amet consectetur adipisicing.</span>
+          </div>
+        </div>
+        <div>
+          <div class="days">
+            <% days.forEach((day, i) => {%>
+            <span class="weekday">
+              <span class="day"><%= day %></span>
+              <span class="temp"><%= maxTemps[i] %>°/<%= minTemps[i] %>°C </span>
+            </span>
+            <% }); %>
+          </div>
+        </div>
+      </div>
+
+      <% } else { %>
+      <p>404 😭</p>
+      <% } %>
+    </main>
+  </body>
+</html>

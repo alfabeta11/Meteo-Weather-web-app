@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --bg: #C0DCED;
+    --color: #4F7CC6;
+    --main: #00A3FF;
+}
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 400 16px "Roboto", sans-serif;
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--color);
+    padding: 2rem;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    /* border: 1px solid; */
+    align-items: center;
+    padding: 2rem 0;
+}
+span {
+    display: inline-block;
+}
+header * {
+    height: 100%;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--main);
+}
+
+form {
+    flex: 1.5;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 60px;
+    overflow: hidden;
+}
+form input {
+    border: none;
+    border-radius: .2rem;
+    height: 55px;
+    transition: .2s;
+}
+input[type="text"] {
+    font-size:1.2rem;
+    padding: .6rem 1.2rem;
+    background-color: #1e506e;
+    margin-right: .5rem;
+    color: #d9d0f1;
+}
+input[type="text"]:focus, input[type="text"]:hover {
+    background-color: #2c5d7a;
+    outline-color: rgb(129, 125, 125);
+    outline-width: 1px;
+}
+input[type="submit"] {
+    background-color: var(--main);
+    color: white;
+    font-size: 1.4rem;
+    padding: .8rem 1rem;
+    /* font-weight: bold; */
+}
+input[type="submit"]:hover {
+    background-color: #1083dF;
+}
+
+main {
+    background-color: white;
+    padding: 2rem;
+}
+.container {
+    display: flex;
+    align-items: center;
+}
+.container div {
+    padding: 1rem;
+    flex: 1;
+}
+.day-info {
+    display: flex;
+    flex-direction: column;
+}
+.city {
+    font-size: 3rem;
+    margin-bottom: 0;
+    text-transform: capitalize;
+    /* margin-top: -1rem; */
+}
+.time-info {
+    font-size: 1rem;  
+    margin-top: -.5rem; 
+    margin-bottom: 1rem;
+    color:rgb(68, 141, 187)
+}
+.weather {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 5px;
+    height: auto;
+}
+.humidity {
+    color: rgb(182, 216, 237);
+    margin-bottom: -1rem;
+    font-size: 1.4rem;
+}
+.temperature {
+    font-size: 6rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+.max-min {
+    margin-top: -1rem;
+    font-size: .9rem;
+    color: #d1e1eb;
+}
+.days {
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+}
+.weekday {
+    flex: 1;
+    display: flex;
+    /* justify-content: space-around; */
+    background-color: #d6e6f0;
+    border-radius: 5px;
+    margin-bottom: 6px;
+    padding: .8rem;
+}
+.weekday span {
+    flex: 1;
+    text-align: center;
+}
+.day {
+    letter-spacing: 1px;
+    color: #1e506e;
+    opacity: .8;
+    position: relative;
+    border-right: 2px solid;
+}
+.temp {
+    font-weight: bold;
+}
+@media screen and (max-width: 900px) {
+    main {
+        padding: 0;
+    }
+    .container {
+        /* width: ; */
+        flex-direction: column;
+        align-items: stretch;
+    }
+    div.days {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 650px) {
+    form {
+        flex: 1;
+        max-width: 80%;
+    }
+    input {
+        max-height: 45px;
+        overflow: hidden;
+        
+    }
+    .logo span {
+        font-size: 1.2rem;
+    }
+    input[type="text"] {
+        font-size: 1rem;
+        
+    }
+    input[type="submit"] {
+        font-size: .9rem;
+        padding: .5rem .8rem .5rem .2rem;
+        overflow: hidden;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    .humidity {
+        font-size: 1rem;
+    }
+    .time-info {
+        font-size: .9rem;
+    }
+    .temperature {
+        font-size: 4rem;
+    }
+}
+@media screen and (min-width: 1200px) {
+    body {
+        margin-left: 6rem;
+        margin-right: 6rem;
+    }
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+}
